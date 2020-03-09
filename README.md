@@ -1,29 +1,64 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# cuestionar.io
+
+> This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Prerrequisites
+
+* Install or update [nodejs 12.16.1 LTS](https://nodejs.org/download/release/latest-v12.x/) if you don't have it already.
+    * node-v12.16.1-x64.msi or node-v12.16.1-x86.msi are recommended for most Windows users.
+    * You can download another version of nodejs from their [website](https://nodejs.org/en/) if you want. v12.16.1 was the most recent at time of writing.  
+
+Confirm installation with:
+
+```
+> node --version
+v12.16.1
+> npm --version
+npm --version 6.13.4
+```
+
+## Good to have
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [Simple React Snippets](https://marketplace.visualstudio.com/items?itemName=burkeholland.simple-react-snippets)
+
+## Getting Started
+
+1. Clone this repository.
+```
+> git clone 
+```
+
+2. Change directories.
+```
+> cd cuestionar.io
+```
+
+3. Install dependencies.
+```
+> npm install
+```
+
+And you are good to go!
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+#### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+The page will reload if you make edits. You will also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+The build is minified and the filenames include the hashes. Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
