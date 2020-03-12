@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CreateQuestion from './createQuestion'
 
-class CreateMultipleQuestion extends CreateQuestion {
+class CreateMultipleQuestion extends Component {
     state = {  
         options: []
     }
@@ -13,7 +13,7 @@ class CreateMultipleQuestion extends CreateQuestion {
     }
 
     render() { 
-        return ( <div></div> );
+        return ( <div>MultitpleQuestion</div> );
     }
 }
  

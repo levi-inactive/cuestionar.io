@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CreateMultipleQuestion from './createMultipleQuestion';
 
 class CreateMultipleSelection extends Component {
     state = {  
@@ -7,7 +6,7 @@ class CreateMultipleSelection extends Component {
     }
 
     render() { 
-        return ( <div></div> );
+        return ( <div>MultipleSelection</div> );
     }
 }
  
