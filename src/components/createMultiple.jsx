@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import { 
     Row, 
     Col, 
-    RadioGroup, 
-    TextInput, 
     Collection, 
     CollectionItem, 
     Button, 
@@ -13,6 +11,7 @@ import {
 
 class CreateMultiple extends Component {
     render() { 
+        console.log('createMultiple object:', this.props.createMultiple);
         return ( 
             <Row>
                 <Col s={12} m={12}>

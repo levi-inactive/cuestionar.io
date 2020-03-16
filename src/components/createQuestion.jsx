@@ -9,7 +9,7 @@ class CreateQuestion extends Component {
         questionText: '',
         isObligatory: false,
         mode: 'openQuestion',
-        createMultiple: {}
+        createMultiple: null
     }
 
     createQuestion = () => {
@@ -21,9 +21,20 @@ class CreateQuestion extends Component {
     }
 
     handleChange = (event) => {
+        console.log('Handling change');
+
         let { name, value } = event.target;
         const mode = value;
         this.setState({ mode });
+
+        if (this.state.mode !== 'openQuestion') {
+            const createMultiple = { 
+                optionList: [
+                    { label: 'Option' }
+                ] 
+            }
+            this.setState({ createMultiple });
+        } 
     }
 
     render() { 
@@ -54,7 +65,20 @@ class CreateQuestion extends Component {
                             </Row>
                         </form>
 
-                        { this.renderMode() }
+                        {/* { this.renderMode() } */}
+                        
+                        { 
+                            () => {
+                                if (typeof(this.state.createMultiple) !== "undefined") {
+                                    this.state.createMultiple.map(cm => {
+                                        return(<CreateMultiple createMultiple={this.state.createMultiple} />);
+                                    });
+                                } else {
+                                    console.log('createMultiple was undefined.');
+                                }
+                            }
+                             
+                        }
                     </Card>
                 </Col>
             </Row>
@@ -63,7 +87,11 @@ class CreateQuestion extends Component {
 
     renderMode() {
         if (this.state.mode !== 'openQuestion') {
-            const createMultiple = { optionList: [] }
+            const createMultiple = { 
+                optionList: [
+                    { label: 'Option' }
+                ] 
+            }
             this.setState({ createMultiple });
 
             return(<CreateMultiple createMultiple={this.state.createMultiple} />);
