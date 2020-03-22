@@ -1,101 +1,106 @@
 import React, { Component } from 'react';
 
-import { Row, Col, Card, TextInput, Select } from 'react-materialize';
+import { 
+    Row, 
+    Col, 
+    Card, 
+    TextInput, 
+    Select, 
+    Button,
+    Collection,
+    CollectionItem,
+    Icon
+} from 'react-materialize';
 
 import CreateMultiple from './createMultiple';
 
 class CreateQuestion extends Component {
-    state = {  
-        questionText: '',
-        isObligatory: false,
-        mode: 'openQuestion',
-        createMultiple: null
-    }
-
-    createQuestion = () => {
-        
-    }
-
-    setQuestionText = (questionText) => {
-        this.setState({ questionText });
-    }
-
-    handleChange = (event) => {
-        console.log('Handling change');
-
-        let { name, value } = event.target;
-        const mode = value;
-        this.setState({ mode });
-
-        if (this.state.mode !== 'openQuestion') {
-            const createMultiple = { 
-                optionList: [
-                    { label: 'Option' }
-                ] 
-            }
-            this.setState({ createMultiple });
-        } 
-    }
-
     render() { 
         return ( 
-            <Row>
-                <Col s={12} m={12}>
-                    <Card
+             <Row>
+                 <Col s={12} m={12}>
+                    <Card className="center"
                         actions={[
-                            <a key="1" href="#">Delete</a>
+                            <Button
+                                waves='light'
+                                className='red darken-1' 
+                                onClick={() => {
+                                    let id = this.props.createQuestion.id;
+                                    this.props.createQuestion.handleDelete(id);
+                                }}
+                            >
+                                Eliminar pregunta
+                                <Icon left>delete</Icon>
+                            </Button>
                         ]}
                     >
-                        <form>
-                            <Col s={6} className="input-field">
-                                <TextInput label="Texto de la pregunta" className="validate" />
+                        <Row>
+                            <Col s={12} m={12}>
+                                <TextInput 
+                                    label="Texto de la pregunta" 
+                                    className="validate" 
+                                    onChange={event => { 
+                                        let createQuestion = this.props.createQuestion;
+                                        this.props.createQuestion.handleQuestionTextChange(event, createQuestion);
+                                    }}
+                                />
                             </Col>
+                        </Row>
 
-                            <Row>
-                                <Col s={12} className="input-field">
-                                    <Select
-                                        onChange={this.handleChange}
-                                        label="Tipo de pregunta"
+                        <Row>
+                            <Col s={12} m={12}>
+                                <Select
+                                    onChange={event => {
+                                        let createQuestion = this.props.createQuestion;
+                                        this.props.createQuestion.handleQuestionModeChange(event, createQuestion);
+                                    }}
+                                    options={{
+                                        classes: '',
+                                        dropdownOptions: {
+                                            alignment: 'left',
+                                            autoTrigger: true,
+                                            closeOnClick: true,
+                                            container: null,
+                                            coverTrigger: true,
+                                            hover: false,
+                                            inDuration: 150,
+                                            onCloseEnd: null,
+                                            onCloseStart: null,
+                                            onOpenEnd: null,
+                                            onOpenStart: null,
+                                            outDuration: 250
+                                        }
+                                    }} 
+                                >
+                                    <option
+                                        disabled
+                                        value=""
                                     >
-                                        <option key='1' value="openQuestion">Pregunta abierta</option>
-                                        <option key='2' value="multipleOption">Opción múltiple</option>
-                                        <option key='3' value="multipleSelection">Selección múltiple</option>
-                                    </Select>
-                                </Col>
-                            </Row>
-                        </form>
-
-                        {/* { this.renderMode() } */}
-                        
+                                        Tipo de pregunta
+                                    </option>
+                                    <option value="open">
+                                        Pregunta abierta
+                                    </option>
+                                    <option value="option">
+                                        Opción múltiple
+                                    </option>
+                                    <option value="selection">
+                                        Selección múltiple
+                                    </option>
+                                </Select>
+                            </Col>
+                        </Row>
+                    
                         { 
-                            () => {
-                                if (typeof(this.state.createMultiple) !== "undefined") {
-                                    this.state.createMultiple.map(cm => {
-                                        return(<CreateMultiple createMultiple={this.state.createMultiple} />);
-                                    });
-                                } else {
-                                    console.log('createMultiple was undefined.');
-                                }
-                            }
-                             
+                            <CreateMultiple 
+                                questionId={ this.props.createQuestion.id } 
+                                createMultiple={ this.props.createQuestion.createMultiple } 
+                            /> 
                         }
                     </Card>
                 </Col>
-            </Row>
+             </Row>
         );
-    }
-
-    renderMode() {
-        if (this.state.mode !== 'openQuestion') {
-            const createMultiple = { 
-                optionList: [
-                    { label: 'Option' }
-                ] 
-            }
-            this.setState({ createMultiple });
-
-            return(<CreateMultiple createMultiple={this.state.createMultiple} />);
-        } 
     }
 }
  
