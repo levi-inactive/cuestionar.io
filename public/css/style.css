@@ -1,22 +1,44 @@
 @keyframes bgcolor {
   0% {
-      background-color: #bbdefb
+      background-color: #e3f2fd 
   }
 
   30% {
-      background-color: #c8e6c9
+      background-color: #e8f5e9
   }
 
   60% {
-      background-color: #ffe0b2 
+      background-color: #fff3e0 
   }
 
   90% {
-      background-color: #ffcdd2
+      background-color: #ffebee
   }
 
   100% {
-      background-color: #e1bee7
+      background-color: #f3e5f5
+  }
+}
+
+@keyframes btncolor {
+  0% {
+      background-color: #90caf9
+  }
+
+  30% {
+      background-color: #a5d6a7
+  }
+
+  60% {
+      background-color: #ffcc80
+  }
+
+  90% {
+      background-color: #ef9a9a
+  }
+
+  100% {
+      background-color: #ce93d8
   }
 }
 
@@ -30,4 +52,13 @@ body {
 
 a {
   color: #00B7FF;
+}
+
+.btn-color,
+.btn-flat:hover {
+  color: white;
+  -webkit-animation: btncolor 20s infinite;
+  animation: btncolor 10s infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
 }
