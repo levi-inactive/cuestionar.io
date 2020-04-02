@@ -1,59 +1,71 @@
 <div class="row">
-    <div class="col m4 s4 offset-s4 offset-m4 center-align">
-        <h1>cuestionar.io</h1>
+    <div class="col s6 m6 offset-s3 offset-m3 center-align">
+        <div class="card">
+            <div class="card-content">
+                <div class="row">
+                    <div class="col s12">
+                        <h1>cuestionar.io</h1>
+                        <h5>¡Hola! ¿Quién anda ahí?</h5>
+                    </div>
+                </div>
 
-        <h5>¡Hola! ¿Quién anda ahí?</h5>
+                <div class="row">
+                    <form action="/login" action="post" class="col s12">
+                        <div class="row">
+                            <div class="col s12">
+                                <input 
+                                    id="email" 
+                                    name="email"
+                                    type="email" 
+                                    class="validate" 
+                                    placeholder="bruno@diaz.com"
+                                >
+                                <label for="username">Email</label>
+                            </div>
+                        </div>
 
-        <form action="/login" action="post">
-            <div class="row">
-                <div class="col s12">
-                    <input 
-                        id="email" 
-                        name="email"
-                        type="email" 
-                        class="validate" 
-                        placeholder="bruno@diaz.com"
-                    >
-                    <label for="username">Email</label>
+                        <div class="row">
+                            <div class="col s12">
+                                <input 
+                                    id="password" 
+                                    name="password" 
+                                    type="password" 
+                                    class="validate" 
+                                    placeholder="Introduce tu contraseña"
+                                >
+                                <label for="password">Contraseña</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12">
+                                <button 
+                                    class="btn btn-large btn-color waves-effect waves-light" 
+                                    type="submit" 
+                                    name="action"
+                                >
+                                    <span> Iniciar Sesión </span>
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="row">
+                    <div class="col s12">
+                        <p>
+                            <span> ¿No tienes cuenta? </span>
+                            <a 
+                                class="btn btn-small btn-flat waves-effect waves-light"
+                                href="/signup"
+                            >
+                                <span> Empieza ahora </span>
+                            </a>
+                        </p>
+                    </div>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col s12">
-                    <input 
-                        id="password" 
-                        name="password" 
-                        type="password" 
-                        class="validate" 
-                        placeholder="Introduce tu contraseña"
-                    >
-                    <label for="password">Contraseña</label>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col s12">
-                    <button 
-                        class="btn btn-large waves-effect waves-light" 
-                        type="submit" 
-                        name="action"
-                    >
-                        <span> Iniciar Sesión </span>
-                        <i class="material-icons right">send</i>
-                    </button>
-                </div>
-            </div>
-        </form>
-        
-        <p>
-            <span> ¿No tienes cuenta? </span>
-            <a 
-                class="btn btn-small btn-flat waves-effect waves-light"
-                href="/signup"
-            >
-                <span> Empieza ahora </span>
-            </a>
-        </p>
-
+        </div>
     </div>
 </div>

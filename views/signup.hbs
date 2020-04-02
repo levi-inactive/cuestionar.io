@@ -1,58 +1,72 @@
 <div class="row">
-    <div class="col m4 s4 offset-s4 offset-m4 center-align">
-        <h1>cuestionar.io</h1>
+    <div class="col s6 m6 offset-s3 offset-m3 center-align">
+        <div class="card">
+            <div class="card-content">
+                <div class="row">
+                    <div class="col s12">
+                        <h1>cuestionar.io</h1>
+                        <h5>Consigue mejores datos con cuestionar.ios que transforman.</h5>
+                    </div>
+                </div>
 
-        <h5>Consigue mejores datos con cuestionar.ios que transforman.</h5>
+                <div class="row">
+                    <form action="/signup" method="post" class="col s12">
+                        <div class="row">
+                            <div class="col s12">
+                                <input 
+                                    id="email" 
+                                    name="email"
+                                    type="email" 
+                                    class="validate" 
+                                    placeholder="bruno@diaz.com"
+                                >
+                                <label for="username">Email</label>
+                            </div>
+                        </div>
 
-        <form action="/signup" method="post">
-            <div class="row">
-                <div class="col s12">
-                    <input 
-                        id="email" 
-                        name="email"
-                        type="email" 
-                        class="validate" 
-                        placeholder="bruno@diaz.com"
-                    >
-                    <label for="username">Email</label>
+                        <div class="row">
+                            <div class="col s12">
+                                <input 
+                                    id="password" 
+                                    name="password"
+                                    type="password" 
+                                    class="validate" 
+                                    placeholder="Al menos 8 caracteres">
+                                <label for="password">Contraseña</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12">
+                                <button 
+                                    class="btn btn-large waves-effect waves-light" 
+                                    type="submit" 
+                                    name="action"
+                                >
+                                    <span> Comenzar </span>
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="row">
+                    <div class="col s12">
+                        <p>
+                            <span> ¿Ya tienes una cuenta? </span>
+                            <a 
+                                class="btn btn-small btn-flat waves-effect waves-light"
+                                href="/login"
+                            >
+                                <span> Inicia sesión </span>
+                            </a>
+                        </p>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <div class="row">
-                <div class="col s12">
-                    <input 
-                        id="password" 
-                        name="password"
-                        type="password" 
-                        class="validate" 
-                        placeholder="Al menos 8 caracteres">
-                    <label for="password">Contraseña</label>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col s12">
-                    <button 
-                        class="btn btn-large waves-effect waves-light" 
-                        type="submit" 
-                        name="action"
-                    >
-                        <span> Comenzar </span>
-                        <i class="material-icons right">send</i>
-                    </button>
-                </div>
-            </div>
-        </form>
         
-        <p>
-            <span> ¿Ya tienes una cuenta? </span>
-            <a 
-                class="btn btn-small btn-flat waves-effect waves-light"
-                href="/login"
-            >
-                <span> Inicia sesión </span>
-            </a>
-        </p>
-
     </div>
 </div>
