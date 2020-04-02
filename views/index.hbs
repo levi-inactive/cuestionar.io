@@ -1,7 +1,68 @@
 <div class="row">
-    <div class="col s12 m12">
-        <h1>{{title}}</h1>
-        <p>Welcome to {{title}}</p>
+    <div class="col s6 m6 offset-s3 offset-m3 center-align">
+        <div class="card">
+            <div class="card-content">
+                <div class="row">
+                    <div class="col s12">
+                        <h1>cuestionar.io</h1>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <form action="/" method="post" class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input 
+                                    id="pin" 
+                                    name="pin" 
+                                    type="number" 
+                                >
+                                <label for="pin">PIN</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12">
+                                <button 
+                                    class="btn btn-large btn-color waves-effect waves-light" 
+                                    type="submit"
+                                >
+                                    <span> Entrar </span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="row">
+                    <div class="col s12">
+                        <p>
+                            <span> ¿Quieres crear un cuestionar.io? </span>
+                            <a 
+                                href="/login"
+                                class="btn btn-small btn-flat waves-effect waves-light"
+                            >
+                                Inicia sesión
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12">
+                        <p>
+                            <span> ¿No tienes cuenta? </span>
+                            <a 
+                                href="/signup"
+                                class="btn btn-small btn-flat waves-effect waves-light"
+                            >
+                                Empieza ahora
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
