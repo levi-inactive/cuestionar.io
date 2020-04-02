@@ -1,6 +1,31 @@
+@keyframes bgcolor {
+  0% {
+      background-color: #bbdefb
+  }
+
+  30% {
+      background-color: #c8e6c9
+  }
+
+  60% {
+      background-color: #ffe0b2 
+  }
+
+  90% {
+      background-color: #ffcdd2
+  }
+
+  100% {
+      background-color: #e1bee7
+  }
+}
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  -webkit-animation: bgcolor 20s infinite;
+  animation: bgcolor 10s infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
 }
 
 a {
