@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var answerCuestionarioRouter = require('./routes/answerCuestionario');
 var createCuestionarioRouter = require('./routes/createCuestionario');
 var loginRouter = require('./routes/login');
+var signupRouter = require('./routes/signup');
 var readAnsweredCuestionarioRouter = require('./routes/readAnsweredCuestionario');
 
 var app = express();
@@ -27,6 +28,7 @@ app.use('/answer', answerCuestionarioRouter);
 app.use('/create', createCuestionarioRouter);
 app.use('/login', loginRouter);
 app.use('/view', readAnsweredCuestionarioRouter);
+app.use('/signup', signupRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
