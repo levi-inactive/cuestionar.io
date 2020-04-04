@@ -27,7 +27,7 @@ app.use('/', indexRouter);
 app.use('/answer', answerCuestionarioRouter);
 app.use('/create', createCuestionarioRouter);
 app.use('/login', loginRouter);
-app.use('/view', readAnsweredCuestionarioRouter);
+app.use('/read', readAnsweredCuestionarioRouter);
 app.use('/signup', signupRouter)
 
 // catch 404 and forward to error handler

@@ -1,28 +1,48 @@
-<div class="col s6 m6 offset-s3 offset-m3">
-    <div class="card">
-        <button class="waves-effect waves-light btn-small"><</button>
-        <span class="card-title">{{pagination}}</span>
-        <button class="waves-effect waves-light btn-small">></button>
+<!--Pagination-->
+<div class="row">
+    <div class="col s6 m6 offset-s3 offset-m3">
+    <div class="card center-align">
+        <h6>Usuario: {{usuario}}</h6>
+        <ul class="pagination" >
+            
+            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active"><a href="#!">1</a></li>
+            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+        
     </div>
-    
 </div>
-<div class="card">
+</div>
+
+<!--Pagination-->
+<div class="row">
     <div class="col s6 m6 offset-s3 offset-m3">
-        <h1>Viendo cuestionario: {{ title }}</h1>
-    </div> 
-    <div class="row">
-    <div class="col s6 m6 offset-s3 offset-m3">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Card Title</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+      <div class="card"><br>
+        <h5 class="center-align">{{title}}</h5><br>
+        <div class="card-action">
+            <h5>Tu opinion acerca de las empresas que manufacturan telefonos respecto a la bateria no removible.</h5>
+            <p>Yo pienso que la estrategia detrás de esto es mayor integridad estructural al telefono y garantizar que el usuario promedio termine comprando uno nuevo cuando la bateria empiece a fallar</p>
         </div>
         <div class="card-action">
-          <a href="#">This is a link</a>
-          <a href="#">This is a link</a>
+            <h5>Selecciona una marca de telefono preferida.</h5>
+            <ul>
+                <li>Apple</li>
+                <li>Samsung</li>
+                <li>HTC</li>
+                <li>Huawei</li>
+                <li>OnePlus</li>
+            </ul>
+        </div>
+        <div class="card-action">
+            <h5>Selecciona lo que más valor le da a un teléfono en tu opinión.</h5>
+            <ul>
+                <li class="bold">Cámara</li>
+                <li>Autonomía</li>
+                <li>Rapidez</li>
+                <li>Ecosistema</li>
+                <li>Pantalla</li>
+            </ul>
         </div>
       </div>
     </div>
   </div>
-</div>
