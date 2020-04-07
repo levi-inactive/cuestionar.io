@@ -1,98 +1,92 @@
-<!--Pagination-->
 <div class="row">
     <div class="col s6 m6 offset-s3 offset-m3">
-    <div class="card center-align">
-        <h6>Repondido por: {{usuario}}</h6>
-        <ul class="pagination" >
-            
-            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-            <li class="active"><a href="#!">1</a></li>
-            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-        </ul>
-        
+        <div class="card"><br>
+            <!--Pagination-->
+            <h5 class="center-align">Repondido por: {{usuario}}</h5>
+            <ul class="pagination center-align">
+                <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                <li class="active"><a href="#!">1</a></li>
+                <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+            </ul>
+            <!--Titulo-->
+            <h5 class="center-align">{{title}}</h5><br>
+            <!--Cuestionario-->
+            <div class="card-action">
+                <h5>Tu opinion acerca de las empresas que manufacturan telefonos respecto a la bateria no removible.
+                </h5>
+                <p>Yo pienso que la estrategia detrás de esto es mayor integridad estructural al telefono y garantizar
+                    que el usuario promedio termine comprando uno nuevo cuando la bateria empiece a fallar</p>
+            </div>
+            <div class="card-action">
+                <h5>Selecciona una marca de telefono preferida.</h5>
+                <form action="#">
+                    <p>
+                        <label>
+                            <input class="with-gap" name="group1" type="radio" disabled="disabled" checked />
+                            <span>OnePlus</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input class="with-gap" name="group1" type="radio" disabled="disabled" />
+                            <span>Apple</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input class="with-gap" name="group1" type="radio" disabled="disabled" />
+                            <span>HTC</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input class="with-gap" name="group1" type="radio" disabled="disabled" />
+                            <span>Samsung</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input class="with-gap" name="group1" type="radio" disabled="disabled" />
+                            <span>Motorola</span>
+                        </label>
+                    </p>
+                </form>
+            </div>
+            <div class="card-action">
+                <h5>Selecciona la(s) características que más valor le da a un teléfono en tu opinión.</h5>
+                <form action="#">
+                    <p>
+                        <label>
+                            <input type="checkbox" disabled="disabled" class="filled-in" />
+                            <span>Camara</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" checked="checked" disabled="disabled" class="filled-in" />
+                            <span>Autonomia</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" disabled="disabled" class="filled-in" />
+                            <span>Rapidez</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" checked="checked" disabled="disabled" class="filled-in" />
+                            <span>Ecosistema</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" checked="checked" disabled="disabled" class="filled-in" />
+                            <span>Caracteristicas</span>
+                        </label>
+                    </p>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
-</div>
-
-<!--Pagination-->
-<div class="row">
-    <div class="col s6 m6 offset-s3 offset-m3">
-      <div class="card"><br>
-        <h5 class="center-align">{{title}}</h5><br>
-        <div class="card-action">
-            <h5>Tu opinion acerca de las empresas que manufacturan telefonos respecto a la bateria no removible.</h5>
-            <p>Yo pienso que la estrategia detrás de esto es mayor integridad estructural al telefono y garantizar que el usuario promedio termine comprando uno nuevo cuando la bateria empiece a fallar</p>
-        </div>
-        <div class="card-action">
-            <h5>Selecciona una marca de telefono preferida.</h5>
-            <form action="#">
-                <p>
-                <label>
-                    <input class="with-gap" name="group1" type="radio" disabled="disabled" checked />
-                    <span>OnePlus</span>
-                </label>
-                </p>
-                <p>
-                <label>
-                    <input class="with-gap" name="group1" type="radio" disabled="disabled"/>
-                    <span>Apple</span>
-                </label>
-                </p>
-                <p>
-                <label>
-                    <input class="with-gap" name="group1" type="radio"  disabled="disabled"/>
-                    <span>HTC</span>
-                </label>
-                </p>
-                <p>
-                <label>
-                    <input class="with-gap" name="group1" type="radio" disabled="disabled" />
-                    <span>Samsung</span>
-                </label>
-                </p>
-                <p>
-                <label>
-                    <input class="with-gap" name="group1" type="radio" disabled="disabled" />
-                    <span>Motorola</span>
-                </label>
-                </p>
-  </form>
-        </div>
-        <div class="card-action">
-            <h5>Selecciona la(s) características que más valor le da a un teléfono en tu opinión.</h5>
-            <form action="#">
-                <p>
-                <label>
-                    <input type="checkbox" disabled="disabled" class="filled-in"/>
-                    <span>Camara</span>
-                </label>
-                </p>
-                <p>
-                <label>
-                    <input type="checkbox" checked="checked" disabled="disabled" class="filled-in"/>
-                    <span>Autonomia</span>
-                </label>
-                </p>
-                <p>
-                <label>
-                    <input type="checkbox" disabled="disabled" class="filled-in"/>
-                    <span>Rapidez</span>
-                </label>
-                </p>
-                <p>
-                <label>
-                    <input type="checkbox" checked="checked" disabled="disabled" class="filled-in"/>
-                    <span>Ecosistema</span>
-                </label>
-                </p>
-                <p>
-                <label>
-                    <input type="checkbox" checked="checked" disabled="disabled" class="filled-in"/>
-                    <span>Caracteristicas</span>
-                </label>
-                </p>
-            </form>
-        </div>
-      </div>
-    </div>
-  </div>

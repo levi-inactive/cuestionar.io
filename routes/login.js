@@ -14,6 +14,7 @@ router.post('/', function(req, res, next) {
   res.redirect('/login');
   // TODO: create profile view and router.
   // TODO: pass user object.
+  
   //res.redirect('/profile');
 });
 
