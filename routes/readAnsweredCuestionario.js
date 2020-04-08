@@ -1,14 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var fetch = require('node-fetch');
+var fetch = require('node-fetch'); 
 
-//var fetch = require("node-fetch");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  //fetch("http://localhost/api/answres/10")
-  //.then(function(response) {return response.json()})
-  //.then(function(json) {
+  fetch("http://localhost/api/answres/10")
+  .then(function(response) {return response.json()})
+  .then(function(json) {
     var questions = [
       "Tu opinion acerca de las empresas que manufacturan telefonos respecto a la bateria no removible.",
       "Selecciona una marca de telefono preferida.",
@@ -21,9 +20,11 @@ router.get('/', function(req, res, next) {
       questions: q
     };
     res.render('read-answered-cuestionario', data);
-  //})
+  })
+});
 
-  //res.render('read-answered-cuestionario', { title: 'Titulo Cuestionario' });
+router.delete('/:pin', function(req, res, next){
+  fetch()
 });
 
 module.exports = router; 
