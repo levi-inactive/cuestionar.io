@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var fetch = require('node-fetch');
 
 //var fetch = require("node-fetch");
 
@@ -17,7 +18,7 @@ router.get('/', function(req, res, next) {
       title: "Mi primer cuestionario", 
       pagination: "3",
       usuario: "Enrique Favila",
-      preguntas: questions
+      questions: q
     };
     res.render('read-answered-cuestionario', data);
   //})
