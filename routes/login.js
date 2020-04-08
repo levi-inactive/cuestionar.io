@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var fetch = require('node-fetch');
 
 /* GET login page. */
 router.get('/', function(req, res, next) {
@@ -10,8 +11,9 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
   // TODO: handle login via DB API.
   // TODO: not logging request body.
+  console.log('yo im handling post');
   console.log(req.body);
-  res.redirect('/login');
+  
   // TODO: create profile view and router.
   // TODO: pass user object.
   
