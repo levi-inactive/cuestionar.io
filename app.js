@@ -4,11 +4,16 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+//Session
+var session = require('express-session');
+
 var indexRouter = require('./routes/index');
 var answerCuestionarioRouter = require('./routes/answerCuestionario');
 var createCuestionarioRouter = require('./routes/createCuestionario');
 var loginRouter = require('./routes/login');
+var signupRouter = require('./routes/signup');
 var readAnsweredCuestionarioRouter = require('./routes/readAnsweredCuestionario');
+var profile = require('./routes/profile');
 
 var app = express();
 
@@ -21,12 +26,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret:"cuestionario"
+}));
 
 app.use('/', indexRouter);
 app.use('/answer', answerCuestionarioRouter);
 app.use('/create', createCuestionarioRouter);
 app.use('/login', loginRouter);
-app.use('/view', readAnsweredCuestionarioRouter);
+app.use('/read', readAnsweredCuestionarioRouter);
+app.use('/signup', signupRouter);
+app.use('/profile', profile);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -44,8 +54,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(8080, function() {
-  console.log('Server listening at port', 8080);
+app.listen(9090, function() {
+  console.log('Server listening at port', 9090);
 });
 
 module.exports = app;
