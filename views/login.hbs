@@ -10,12 +10,16 @@
                 </div>
 
                 <div class="row">
-                    <form class="col s12">
+                    <form 
+                        method="post" 
+                        action="/login" 
+                        class="col s12"
+                    >
                         <div class="row">
                             <div class="col s12">
                                 <input 
                                     id="username" 
-                                    name="email"
+                                    name="username"
                                     type="text" 
                                     class="validate" 
                                     placeholder="Hugo420"
@@ -40,8 +44,9 @@
                         <div class="row">
                             <div class="col s12">
                                 <button
-                                    id="btnLogin" 
-                                    class="btn btn-large btn-color waves-effect waves-light" 
+                                    type="submit" 
+                                    class="btn btn-large btn-color waves-effect waves-light"
+                                    name="action" 
                                 >
                                     <span> Iniciar Sesión </span>
                                     <i class="material-icons right">send</i>

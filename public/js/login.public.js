@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', function(event) {
     var btnLogin = document.getElementById("btnLogin");
 
 
-    btnLogin.addEventListener('click', function() {
-        var username = usernameInput.value;
+    /*btnLogin.addEventListener('click', function() {
         console.log("Click en btnLogin");
+        var username = usernameInput.value;
         var password = passwordInput.value;
-        var myBody = {
+        var credentials = {
             username:username,
             password:password
         }
@@ -31,4 +31,5 @@ document.addEventListener('DOMContentLoaded', function(event) {
             console.log(json);
         });
     })
+    */
 })
