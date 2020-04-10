@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var fetch = require('node-fetch');
 var session = require('express-session');
-
 router.use(session({secret: 'secret'}));
 var sess;
 

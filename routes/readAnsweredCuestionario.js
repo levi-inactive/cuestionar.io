@@ -1,10 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var fetch = require('node-fetch'); 
-
+var session = require('express-session');
+router.use(session({secret: 'secret'}));
+var sess;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  sess = req.session;
   var questions = [
     "Tu opinion acerca de las empresas que manufacturan telefonos respecto a la bateria no removible.",
     "Selecciona una marca de telefono preferida.",
@@ -26,6 +29,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.delete('/:pin', function(req, res, next){
+  sess = req.session;
   fetch()
 });
 
