@@ -8,29 +8,18 @@ var sess;
 /* GET home page. */
 router.get('/', function(req, res, next) {
     sess=req.session;
-    const data = {
-      title: "Mi primer cuestionario", 
-      username: "efavila",
-      firstName: "Enrique",
-      lastName: "Favila",
-      tituloCuestionario: "Titulo de cuestionario"
-    };
-    console.log(sess);
-    console.log("Este es el usuario que llega al perfil: " +sess.username);
-    if (sess.username)
-    res.render('profile', data);
-    else{
-      res.redirect('/');
-    }
-    /*
-    
-    fetch("http://localhost/api/answers/10")
-    .then(function(response) {return response.json()})
-    .then(function(json) {
-      
-      
-    })
-    */
+    var cuestionarioList;
+    var data;
+    fetch('http://localhost:8080/rest/service/cuestionariosByUser/'+ sess.username)
+    .then(response => response.json())
+    .then(response => { 
+      cuestionarioList = response;
+      data = {
+        usuario: sess.username,
+        cuestionarioList: cuestionarioList
+      };
+      res.render('profile', data)
+    });
   });
   
   router.delete('/:pin', function(req, res, next){
@@ -39,3 +28,24 @@ router.get('/', function(req, res, next) {
   });
   
   module.exports = router; 
+
+
+
+
+/*
+  function getCuestionariosByUser(username) {
+    var json = fetch('http://localhost:8080/rest/service/cuestionariosByUser/'+ sess.username)
+    .then(response => response.json())
+    
+    var jsonParseAsync = (jsonFile) => {
+      console.log(jsonFile);
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve(JSON.parse(jsonFile));
+        })
+      });
+    }
+
+    return jsonParseAsync(json);
+  }
+  */
