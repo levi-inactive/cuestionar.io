@@ -1,15 +1,24 @@
+// const Swal = require('sweetalert2')
+
 const QuestionType = {
     OPEN: 1,
     OPTION: 2,
     SELECTION: 3
 }
+
+let cuestionario = {
+    cuestionarioTitle: '',
+    description: ''
+};
 let questionList = [];
 let nextQuestionId = 1;
 
 $(document).ready(() => {
     const addQuestionBtn = $('#add-question-btn');
+    const createBtn = $('#create-btn');
 
     addQuestionBtn.on('click', addQuestion);
+    createBtn.on('click', createCuestionario);
 })
 
 function addQuestion() {
@@ -22,18 +31,26 @@ function addQuestion() {
     }
 
     $('#new-question-container').append(`
-    <div id=${question.id} class="row"> 
+    <div id=question-${question.id} class="row"> 
         <div class="col s6 m6 offset-s3 offset-m3 center-align">
             <div class="card">
                 <div class="cart-content">
                     <div class="row">
-                        <div class="input-field col s10 offset-m1">
+                        <div class="input-field col s8 offset-m1">
                             <input 
                                 id="question-title-${question.id}" 
                                 name="question-title-${question.id}" 
                                 type="text" 
                             >
                             <label for="question-title-${question.id}">Texto de la pregunta</label>
+                        </div>
+                        <div class="col s3">
+                            <a 
+                                id="question-delete-btn-${question.id}"
+                                class="btn btn-small white red-text text-lighten-2 waves-effect waves-dark"
+                            >
+                                <i class="material-icons">close</i>
+                            </a>
                         </div>
                     </div>
 
@@ -61,10 +78,18 @@ function addQuestion() {
     </div>
     `)
     .promise()
+    .then(initializeQuestionDeleteBtn(question))
     .done(initializeSelect(question));
 
     nextQuestionId++;
     questionList.push(question);
+}
+
+function initializeQuestionDeleteBtn(question) {
+    $(`#question-delete-btn-${question.id}`).on('click', (event) => {
+        $(`#question-${question.id}`).remove();   
+        questionList = questionList.filter(q => q.id !== question.id);
+    });
 }
 
 function initializeSelect(question) {
@@ -90,7 +115,7 @@ function initializeSelect(question) {
             <div class="input-field col s10 offset-m1">
                 <button 
                     id="add-option-btn-${question.id}"
-                    class="btn-floating btn-small btn-color waves-effect waves-light"
+                    class="btn-floating btn-small green lighten-2 waves-effect waves-light"
                 >
                     <i class="material-icons">add</i>
                 </button>
@@ -105,7 +130,8 @@ function initializeSelect(question) {
 function addOption(question) {
     $(`#add-option-btn-${question.id}`).on('click', () => {
         option = {
-            id: question.nextOptionId
+            id: question.nextOptionId,
+            optionText: ''
         }
 
         let multipleContent = `
@@ -136,12 +162,12 @@ function addOption(question) {
                             />
                         </div>
                         <div class="col s2">
-                            <button 
+                            <a 
                                 id="option-delete-btn-question-${question.id}-option-${option.id}"
-                                class="btn-floating btn-small red lighten-2 waves-effect waves-light"
+                                class="red-text text-lighten-2 waves-effect waves-light"
                             >
-                                <i class="material-icons">delete</i>
-                            </button>
+                                <i class="material-icons">close</i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -157,8 +183,45 @@ function addOption(question) {
 
 function initializeOption(question, option) {
     $(`#option-delete-btn-question-${question.id}-option-${option.id}`).on('click', () => {
-        $(`#question-${question.id}-option-${option.id}`).remove();
-        
+        $(`#question-${question.id}-option-${option.id}`).remove();   
         question.optionList = question.optionList.filter(o => o.id !== option.id);
+    });
+}
+
+function createCuestionario() {
+    console.log('creating cuestionar.io');
+    cuestionario.cuestionarioTitle = $(`#cuestionario-title`).val();
+    cuestionario.description = $(`#cuestionario-description`).val();
+
+    for (let i = 0; i < questionList.length; i++) {
+        const question = questionList[i];
+        question.questionTitle = $(`#question-title-${question.id}`).val();
+        for (let j = 0; j < question.optionList.length; j++) {
+            const option = question.optionList[j];
+            option.optionText = $(`#option-text-question-${question.id}-option-${option.id}`).val();
+        }
+    }
+
+    cuestionario.questionList = questionList;
+
+    data = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(cuestionario)
+    }
+    
+    fetch('/create', data)
+    .then(response => {
+        if (response.status != 200) {
+            Swal.fire({
+                title: 'Error',
+                text: 'Hubo un error al crear tu Cuestionar.io',
+                icon: 'error',
+                showConfirmButton: false,
+                timer: 2000
+            });
+        } else {
+            console.log(`Response status: ${response.status}`);
+        }
     });
 }

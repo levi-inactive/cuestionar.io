@@ -1,10 +1,33 @@
+{{error}}
+{{message}}
 <div class="row">
     <div class="col s6 m6 offset-s3 offset-m3 center-align">
         <div class="card">
             <div class="card-content">
                 <div class="row">
                     <div class="col s12">
-                        <h1>{{ title }}</h1>
+                        <div class="row">
+                            <div class="col s12">
+                                <input 
+                                    id="cuestionario-title"
+                                    type="text" 
+                                    {{!-- style="width: 100%; height: 30px; font-size: 30px;" --}}
+                                    placeholder="Nuevo Cuestionar.io"
+                                >
+                                <label for="cuestionario-title">Título</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <input 
+                                    id="cuestionario-description"
+                                    type="text" 
+                                    placeholder="Un nuevo Cuestionar.io es creado..."
+                                >
+                                <label for="cuestionario-title">Descripción</label>
+                            </div>
+                            <div class="col s3">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -24,9 +47,10 @@
                     <div class="col s6">
                         <button 
                             id="add-question-btn"
-                            class="btn btn-large btn-color waves-effect waves-light"
+                            class="btn btn-large green lighten-2 waves-effect waves-light"
                         >
-                            Añadir pregunta
+                            Pregunta
+                            <i class="material-icons left">add</i>
                         </button>
                     </div>
 

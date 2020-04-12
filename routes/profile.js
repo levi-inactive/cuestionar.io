@@ -7,21 +7,20 @@ var sess;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    sess=req.session;
-    const data = {
-      title: "Mi primer cuestionario", 
-      username: "efavila",
-      firstName: "Enrique",
-      lastName: "Favila",
-      tituloCuestionario: "Titulo de cuestionario"
-    };
+    sess = req.session;
+    
+    console.log('Now in profile');
     console.log(sess);
-    console.log("Este es el usuario que llega al perfil: " +sess.username);
-    if (sess.username)
-    res.render('profile', data);
-    else{
-      res.redirect('/');
-    }
+
+    // TODO: Delete line 16.
+    res.render('profile', { });
+
+    // if (sess.username && typeof sess.username != undefined)
+    //   res.render('profile', data);
+    // else{
+    //   res.redirect('/');
+    // }
+
     /*
     
     fetch("http://localhost/api/answers/10")
