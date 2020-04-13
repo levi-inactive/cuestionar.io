@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var fetch = require('node-fetch');
 var session = require('express-session');
-router.use(session({secret: 'secret'}));
+router.use(session({secret: 'secret'})); 
 var sess;
 
 /* GET home page. */
@@ -13,10 +13,10 @@ router.get('/', function(req, res, next) {
     fetch('http://localhost:8080/rest/service/cuestionariosBy/' + sess.username)
     .then(response => response.json())
     .then(response => { 
-      cuestionario = response;
+      var cuestionario = response;
       data = {
         usuario: sess.username,
-        cuestionarioList: cuestionarioList
+        cuestionarioList: cuestionario
       };
       res.render('profile', data)
     });
