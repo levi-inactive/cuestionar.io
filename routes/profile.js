@@ -22,8 +22,12 @@ router.get('/', function(req, res, next) {
     });
   });
   
-  router.delete('/:pin', function(req, res, next){
+  router.delete('/:idCuestionario', function(req, res, next){
     sess = req.session;
+
+    console.log("Deleting cuestionario.io:", req.body);
+
+    /*
     fetch("http://localhost:8080/rest/service/deleteCuestionario/"+req.body)
     .then( response => response.json())
     .then(response => {
@@ -31,7 +35,9 @@ router.get('/', function(req, res, next) {
         //TODO respuesta aqui? Recergar la pagina aqui?
       }
     })
+    */
   });
+
   module.exports = router; 
 
 
