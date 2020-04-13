@@ -10,10 +10,10 @@ router.get('/', function(req, res, next) {
     sess=req.session;
     var cuestionarioList;
     var data;
-    fetch('http://localhost:8080/rest/service/cuestionariosByUser/'+ sess.username)
+    fetch('http://localhost:8080/rest/service/cuestionariosBy/' + sess.username)
     .then(response => response.json())
     .then(response => { 
-      cuestionarioList = response;
+      cuestionario = response;
       data = {
         usuario: sess.username,
         cuestionarioList: cuestionarioList
@@ -24,9 +24,14 @@ router.get('/', function(req, res, next) {
   
   router.delete('/:pin', function(req, res, next){
     sess = req.session;
-    fetch()
+    fetch("http://localhost:8080/rest/service/deleteCuestionario/"+req.body)
+    .then( response => response.json())
+    .then(response => {
+      if (response == true){
+        //TODO respuesta aqui? Recergar la pagina aqui?
+      }
+    })
   });
-  
   module.exports = router; 
 
 

@@ -42,6 +42,26 @@
   }
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 body {
   padding: 50px;
   -webkit-animation: bgcolor 20s infinite;
@@ -61,4 +81,9 @@ a {
   animation: btncolor 10s infinite;
   -webkit-animation-direction: alternate;
   animation-direction: alternate;
+}
+
+.carousel {
+  overflow-y: auto;
+  height: 70vh;
 }
