@@ -4,7 +4,7 @@ var fetch = require('node-fetch');
 var session = require('express-session');
 router.use(session({secret: 'secret'}));
 var sess;
-
+ 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   sess = req.session;

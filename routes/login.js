@@ -40,6 +40,7 @@ router.post('/', function(req, res, next) {
       .then(response => {
         if (response == true){
           req.session.username=body.usuario;
+          req.session.idUsuario=response.body;
           res.redirect('/profile');
         }
 

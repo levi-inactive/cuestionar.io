@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(document).ready(() => { 
     var carouselSlider = $('.carousel.carousel-slider')
     carouselSlider.carousel({
         fullWidth: true
