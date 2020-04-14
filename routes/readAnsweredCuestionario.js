@@ -13,11 +13,18 @@ router.get('/:codigo', function(req, res, next) {
     let uri = `http://localhost:8080/rest/service/cuestionarioConsultableRespondido/${code}`;
 
     fetch(uri)
-    .then(function(response) {return response.json()})
-    .then(function(json) { return JSON.parse(json) })
-    .then(function(fillList) {  
-        fillList.forEach(fill => {
-            fill.preguntaList.forEach(pregunta => {
+    .then(function(response) {
+        //console.log(response);
+        return response.json();
+    })
+    .then(function(fillList) {
+        let i = 0;
+        while (fillList[i]) {
+            const fill = fillList[i];
+
+            let j = 0;
+            while (fill.preguntaList[j]) {
+                const pregunta = fill.preguntaList[j];
                 switch (pregunta.tipoPregunta) {
                     case 'Pregunta Abierta':
                         pregunta.isOpen = true;
@@ -29,17 +36,15 @@ router.get('/:codigo', function(req, res, next) {
                         pregunta.isMultipleSelection = true;
                         break;
                 }
-    
-                pregunta.opcionList.forEach(opcion => {
-                    if (pregunta
-                        .respuesta
-                        .respuestaOpcionList
-                        .includes(opcion.idOpcion)) {
-                            opcion.selected = true;
-                    }
-                });
-            });
-        });
+
+                
+
+                j++;
+            }
+            i++;
+        }
+
+        console.log(fillList[0].preguntaList[1].respuesta);
 
         let data = {
             title: fillList[0].nombre,

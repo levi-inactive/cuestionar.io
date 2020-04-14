@@ -24,9 +24,9 @@
                         {{#if respuesta.textoRespuesta}}
                             <p>{{respuesta.textoRespuesta}}</p>
                         {{else}}
-                            {{#if respuesta.opcionList}}
+                            {{#if respuesta.respuestaOpcionList}}
                                 <form action="#">
-                                    {{#each respuesta.opcionList}}
+                                    {{#each respuesta.respuestaOpcionList}}
                                     <p>
                                         <label>
                                             <input 
@@ -40,12 +40,12 @@
 
                                                 disabled="disabled" 
                                                 
-                                                {{#if selected}}
+                                                {{#if selecionado}}
                                                 class="filled-in"
                                                 checked
                                                 {{/if}} 
                                             />
-                                            <span> {{optionText}} </span>
+                                            <span> {{opcionText}} </span>
                                         </label>
                                     </p>
                                     {{/each}}

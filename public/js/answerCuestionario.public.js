@@ -27,6 +27,13 @@ function sendCuestionario() {
                 respuestaOpcionList.push(respuestaOpcion);
             });
 
+            if (pregunta.isOpen)
+                delete pregunta.isOpen;
+            if (pregunta.isMultipleOption)
+                delete pregunta.isMultipleOption;
+            if (pregunta.isMultipleSelection)
+                delete pregunta.isMultipleSelection;
+
             respuesta.respuestaOpcionList = respuestaOpcionList;
         }
 

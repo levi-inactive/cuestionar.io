@@ -41,13 +41,13 @@ router.post('/', function(req, res, next) {
   console.log(req.body);
   console.log('Now POSTing...');
 
-  var resquestObject = {
+  var requestObject = {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(req.body)
   }
 
-  fetch('http://localhost:8080/rest/service/respuestas', requestObject)
+  fetch('http://localhost:8080/rest/service/respuestas/', requestObject)
   .then(response => {
     console.log(response);
     res.send(response);
