@@ -8,6 +8,7 @@ var sess;
 /* GET home page. */
 router.get('/', function(req, res, next) {
     sess=req.session;
+    console.log("idUsuario:  "+sess.idUsuario);
     var data;
     fetch('http://localhost:8080/rest/service/cuestionariosBy/' + sess.username)
     .then(response => response.json())
