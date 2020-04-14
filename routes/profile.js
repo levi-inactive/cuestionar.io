@@ -8,7 +8,6 @@ var sess;
 /* GET home page. */
 router.get('/', function(req, res, next) {
     sess=req.session;
-    var cuestionarioList;
     var data;
     fetch('http://localhost:8080/rest/service/cuestionariosBy/' + sess.username)
     .then(response => response.json())
@@ -25,38 +24,20 @@ router.get('/', function(req, res, next) {
   router.delete('/:idCuestionario', function(req, res, next){
     sess = req.session;
 
-    console.log("Deleting cuestionario.io:", req.body);
+    console.log("Deleting cuestionario.io:", req.params.idCuestionario);
 
-    /*
-    fetch("http://localhost:8080/rest/service/deleteCuestionario/"+req.body)
+    let data = {
+      method:"delete"
+    }
+
+    
+    fetch("http://localhost:8080/rest/service/deleteCuestionario/"+req.params.idCuestionario, data)
     .then( response => response.json())
     .then(response => {
       if (response == true){
         //TODO respuesta aqui? Recergar la pagina aqui?
       }
     })
-    */
   });
 
   module.exports = router; 
-
-
-
-
-/*
-  function getCuestionariosByUser(username) {
-    var json = fetch('http://localhost:8080/rest/service/cuestionariosByUser/'+ sess.username)
-    .then(response => response.json())
-    
-    var jsonParseAsync = (jsonFile) => {
-      console.log(jsonFile);
-      return new Promise(resolve => {
-        setTimeout(() => {
-          resolve(JSON.parse(jsonFile));
-        })
-      });
-    }
-
-    return jsonParseAsync(json);
-  }
-  */
