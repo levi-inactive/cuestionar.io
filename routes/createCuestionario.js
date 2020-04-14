@@ -22,13 +22,9 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
   sess = req.session;
   req.body.codigo = new RandExp(/[a-zA-Z]{5}/).gen();
-  req.body.fkUsuario = 3;
+  req.body.fkUsuario = sess.idUsuario;
   req.body.idCuestionario = 0;
-  console.log(req.body);
-  var data={
-    //usuario: 'root',//sess.username,
-    cuestionario: req.body    
-  }
+  req.body.usuario = sess.username;
   var requestObject = {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
