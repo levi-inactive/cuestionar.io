@@ -35,8 +35,13 @@
                             </div>
                         </div>
                         <div class="card-action">
+                            <input id="id-cuestionario-input" type="hidden" name="{{idCuestionario}}">
                             <a href="">Ver respuestas</a>
                             <a href="">Editar</a>
+                            <button class="borrar-btn btn btn-small btn-color waves-effect waves-light" id="{{idCuestionario}}">Borrar</button>
+                            <!--<button id="btn-{{idCuestionario}}" class="borrar-btn">BorrarButton</button>
+                            <a id="borrar-btn-{{idCuestionario}}">Borrar</a>
+                            <a class="borrar-btn" id="{{idCuestionario}}">Borrar</a>-->
                         </div>
                     </div>
                 </div>
@@ -45,3 +50,5 @@
         </div>
     </div>
 </div>
+
+<script src="../public/js/profile.public.js" type="text/javascript"></script>
