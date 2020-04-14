@@ -4,6 +4,9 @@ $(document).ready(() => {
         var idCuestionario = this.id;
         deleteCuestionarioByID(idCuestionario);
     })
+    $('#btnCreateCuestionario').click(function() {
+        fetch('/create')
+    })
 });
 
 function deleteCuestionarioByID(id){
@@ -26,4 +29,4 @@ function deleteCuestionarioByID(id){
         }
         
     }).catch(e => console.log(e));
-}
+} 
