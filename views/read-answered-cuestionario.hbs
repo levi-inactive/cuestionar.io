@@ -18,21 +18,23 @@
                     <div class="card-action">
                         <h2 class="card-title">Respondido por: {{usuario}} </h2>
                     </div>
-                    {{#each answeredQuestionList}}
+                    {{#each preguntaList}}
                     <div class="card-action">
-                        <h5> {{questionText}} </h5>
-                        {{#if answerText}}
-                            <p>{{answerText}}</p>
+                        <h5> {{nombre}} </h5>
+                        {{#if respuesta.textoRespuesta}}
+                            <p>{{respuesta.textoRespuesta}}</p>
                         {{else}}
-                            {{#if optionList}}
+                            {{#if respuesta.opcionList}}
                                 <form action="#">
-                                    {{#each optionList}}
+                                    {{#each respuesta.opcionList}}
                                     <p>
                                         <label>
                                             <input 
-                                                {{#if ../multipleOption}}
+                                                {{#if ../isMultipleOption}}
                                                 type="checkbox" 
-                                                {{else}}
+                                                {{/if}}
+
+                                                {{#if ../isMultipleSelection}}
                                                 type="radio" 
                                                 {{/if}}
 
