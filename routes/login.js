@@ -38,7 +38,7 @@ router.post('/', function(req, res, next) {
       })
       .then(response => response.json())
       .then(response => {
-        if (response == true){
+        if (response > 0){
           req.session.username=body.usuario;
           req.session.idUsuario=response.body;
           res.redirect('/profile');

@@ -30,8 +30,10 @@ router.get('/', function(req, res, next) {
       method:"delete"
     }
 
-    
-    fetch("http://localhost:8080/rest/service/deleteCuestionario/"+req.params.idCuestionario, data)
+    var URI = "http://localhost:8080/rest/service/cuestionario/"+req.params.idCuestionario;
+    console.log("URI de delete: " + URI);
+
+    fetch(URI, data)
     .then( response => response.json())
     .then(response => {
       if (response == true){
