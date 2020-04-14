@@ -28,6 +28,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/answer', express.static(path.join(__dirname, 'public')));
 app.use('/read', express.static(path.join(__dirname, 'public')));
+app.use('/public', express.static(path.join(__dirname, 'public')));
+
 app.use(session({
   secret:"cuestionario"
 }));

@@ -38,12 +38,12 @@ router.post('/', function(req, res, next) {
       })
       .then(response => response.json())
       .then(response => {
-        if (response == true){
+        console.log(response);
+        if (response > 0){
           req.session.username=body.usuario;
-          req.session.idUsuario=response.body;
+          req.session.idUsuario=response;
           res.redirect('/profile');
         }
-
         else
           res.render('login', {error: "invalid_session"})
       })
